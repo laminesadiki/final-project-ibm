@@ -1,0 +1,10 @@
+.banner {
+  background-image: url("https://images.saymedia-content.com/.image/t_share/MTc0Mzc4NTY2MjIwNjUzOTI4/best-burger-restaurant-names.jpg");
+  height: 50vh;
+  width: 50wh;
+}
+
+.banner_content {
+  padding: 100px;
+  text-align: left;
+}
