@@ -1,5 +1,7 @@
 import React from "react";
 import { AiFillInstagram, AiFillYoutube, AiFillGithub } from "react-icons/ai";
+import "./Footer.css";
+
 const Footer = () => {
   return (
     <footer style={{ backgroundColor: "black", color: "white" }}>

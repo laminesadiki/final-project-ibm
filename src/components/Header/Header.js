@@ -24,8 +24,7 @@ const pages = [
 ];
 
 const settings = [
-  { name: "Profile", path: "/profile" },
-  { name: "Mon Compte", path: "/account" },
+  { name: "Profile", path: "/me" },
   { name: "Mes Commandes", path: "/myOrders" },
   { name: "Détails de la Commande", path: "/orderDetails" },
 ];
