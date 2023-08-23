@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Contact.css";
-import Login from "./Login";
-import Register from "./Register";
+// import Login from "./Login";
+// import Register from "./Register";
 
 const Contact = () => {
   const [login, setLogin] = useState(true);
@@ -18,34 +18,41 @@ const Contact = () => {
     setRegister(true);
   };
 
-  // return (<Register />)
-
   return (
-    <div className="contact">
-      <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-        <li className="nav-item" role="presentation">
-          <button
-            className={`nav-link ${isActive}`}
-            id="tab-login"
-            onClick={handleClickLogin}
-          >
-            Se connecter
-          </button>
-        </li>
-        <li className="nav-item" role="presentation">
-          <button
-            className={`nav-link ${isNotActive}`}
-            id="tab-register"
-            onClick={handleClickRegister}
-          >
-            S'inscrire
-          </button>
-        </li>
-      </ul>
-      {login && <Login handleClickRegister={handleClickRegister} />}
+    <form
+      className="text-center border border-light p-5"
+      action="#!"
+      style={{ width: "500px" }}
+    >
+      <p className="h4 mb-4">Contact us</p>
 
-      {register && <Register />}
-    </div>
+      <input
+        type="text"
+        id="defaultContactFormName"
+        className="form-control mb-4"
+        placeholder="Name"
+      />
+
+      <input
+        type="email"
+        id="defaultContactFormEmail"
+        className="form-control mb-4"
+        placeholder="E-mail"
+      />
+
+      <div className="form-group">
+        <textarea
+          className="form-control rounded-0"
+          id="exampleFormControlTextarea2"
+          rows="3"
+          placeholder="Message"
+        ></textarea>
+      </div>
+
+      <button className="btn btn-info btn-block" type="submit">
+        Send
+      </button>
+    </form>
   );
 };
 export default Contact;

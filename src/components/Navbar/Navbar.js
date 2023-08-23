@@ -31,6 +31,8 @@ function Navbar() {
     { name: "Nous Contacter", path: "/contact" },
     { name: "Menus", path: "/menu" },
     { name: "Livraison", path: "/shipping" },
+    { name: "Se Connecter", path: "/login" },
+    { name: "S'inscire", path: "/register" },
   ];
 
   const settings = [
