@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import { RiFindReplaceLine } from "react-icons/ri";
 const About = () => {
   return (
-    <section className="about">
+    <section className="about container">
       <main>
-        <h1>A propos</h1>
-        <article>
-          <h4>Burger Shop</h4>
+        <article className="">
+          <h2>Burger Shop</h2>
           <p>
             Nous sommes Burger Shop. L’endroit où l’on trouve les burgers les
             plus savoureux du monde.
@@ -16,19 +15,16 @@ const About = () => {
             Découvrez les différents plats et burgers. Cliquez ci-dessous pour
             consulter notre carte
           </p>
-          <Link to="/">
-            <RiFindReplaceLine />
-          </Link>
         </article>
-        <div>
-          <h2>Fondateur</h2>
-          <article>
-            <div>
-              <img src={"assets/skj.jpg"} alt="Fondateur" />
+        <div className="container bg-black text-white">
+          <h2 style={{paddingTop: "30px" }}>Fondateur</h2>
+          <article className="row">
+            <div className="col-md-3" style={{marginLeft: "100px"}}>
+              <img src={"assets/skj.jpg"} alt="Fondateur" style={{borderRadius: "50%"}}/>
               <h3>Nelson</h3>
             </div>
-            <p>
-              Je suis Nelson, le fondateur de Burger Shop, Affilié à God
+            <p className="col-md-6" style={{marginTop: "100px", fontSize: "25px"}} >
+              Je suis Nelson, le fondateur de Burger Shop, <br/> Affilié à God
               Taste...
             </p>
           </article>
