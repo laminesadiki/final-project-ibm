@@ -1,3 +1,4 @@
+import { Checkout } from "../components/Checkout/Checkout";
 import About from "./About/About";
 import Cart from "./Cart/Cart";
 import Contact from "./Contact/Contact";
@@ -62,5 +63,9 @@ export const ROUTES = [
   {
     component: Shipping,
     path: "/shipping",
+  },
+  {
+    component: Checkout,
+    path: "/checkout",
   },
 ];

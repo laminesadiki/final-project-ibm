@@ -7,11 +7,10 @@ import Navbar from "./components/Navbar/Navbar";
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <div className="App">
       {/* <Header /> */}
-      <Navbar count={count} />
+      <Navbar />
       <Routes>
         {ROUTES.map((page, index) => (
           <Route key={index} path={page.path} element={<page.component />} />
