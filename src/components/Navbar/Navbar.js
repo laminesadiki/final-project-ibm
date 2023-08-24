@@ -57,22 +57,34 @@ function Navbar() {
               <NavItem key={index} name={item.name} path={item.path} />
             ))}
 
-            <li className="nav-item dropdown ms-auto" style={{marginRight: "80px"}}>
-              <a
-                className="nav-link dropdown-toggle text-white"
-                href="#!"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Mon Compte
-              </a>
-              <ul className="dropdown-menu">
-                {settings.map((item, index) => (
-                  <DropDownItem key={index} name={item.name} path={item.path} />
-                ))}
-              </ul>
-            </li>
+            <div className="ms-auto row">
+              <li className="nav-item dropdown col-md-6">
+                <a
+                  className="nav-link dropdown-toggle text-white"
+                  href="#!"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Mon Compte
+                </a>
+                <ul className="dropdown-menu">
+                  {settings.map((item, index) => (
+                    <DropDownItem
+                      key={index}
+                      name={item.name}
+                      path={item.path}
+                    />
+                  ))}
+                </ul>
+              </li>
+              <div className="menu-right col-md-6">
+                <Link to="/cart">
+                  <i class="fas fa-shopping-bag fa-2x grey"></i>
+                  <span class="badge badge-pill badge-success">1</span>
+                </Link>
+              </div>
+            </div>
           </ul>
         </div>
       </div>
