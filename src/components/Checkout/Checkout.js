@@ -53,7 +53,7 @@ export const Checkout = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <small id="emailHelp" className="form-text text-muted">
-              We'll never share your email with anyone else.
+            Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre.
             </small>
           </div>
           <div className="form-group">
@@ -76,7 +76,7 @@ export const Checkout = () => {
               !isValid && "disabled"
             } white btn btn-light btn-lg btn-block bg-crimson checkout `}
           >
-            Confirm
+            Confirmer
           </Link>
         </form>
       </div>

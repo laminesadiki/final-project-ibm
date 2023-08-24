@@ -5,8 +5,6 @@ import Contact from "./Contact/Contact";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
 import Menu from "./Menu/Menu";
-import MyOrders from "./MyOrders/MyOrders";
-import OrderDetails from "./OrderDetails/OrderDetails";
 import Register from "./Register/Register";
 import Shipping from "./Shipping/Shipping";
 
@@ -17,8 +15,6 @@ export {
   Home,
   Login,
   Menu,
-  MyOrders,
-  OrderDetails,
   Register,
   Shipping,
 };
@@ -47,14 +43,6 @@ export const ROUTES = [
   {
     component: Menu,
     path: "/menu",
-  },
-  {
-    component: MyOrders,
-    path: "/myOrders",
-  },
-  {
-    component: OrderDetails,
-    path: "/orderDetails",
   },
   {
     component: Register,

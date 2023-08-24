@@ -1,53 +1,5 @@
 const IMG = "assets/burger1.png";
 
-export const MENU_LIST = [
-  {
-    img: IMG,
-    title: "Burger L",
-    price: "200 €",
-  },
-  {
-    img: IMG,
-    title: "Burger L",
-    price: "200 €",
-  },
-  {
-    img: IMG,
-    title: "Burger L",
-    price: "200 €",
-  },
-  {
-    img: IMG,
-    title: "Burger L",
-    price: "200 €",
-  },
-  {
-    img: IMG,
-    title: "Burger L",
-    price: "200 €",
-  },
-  {
-    img: IMG,
-    title: "Burger L",
-    price: "200 €",
-  },
-  {
-    img: IMG,
-    title: "Burger L",
-    price: "200 €",
-  },
-  {
-    img: IMG,
-    title: "Burger L",
-    price: "200 €",
-  },
-  {
-    img: IMG,
-    title: "Burger L",
-    price: "200 €",
-  },
-];
-
 export const burgers = [
   {
     ref: "burger_1",

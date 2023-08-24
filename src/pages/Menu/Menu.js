@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../components/Card/Card";
-import { MENU_LIST, burgers } from "./menu.contant";
+import { burgers } from "./menu.contant";
 import "./Menu.css";
 
 function Menu() {

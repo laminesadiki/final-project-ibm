@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Contact.css";
-// import Login from "./Login";
-// import Register from "./Register";
 
 const Contact = () => {
 

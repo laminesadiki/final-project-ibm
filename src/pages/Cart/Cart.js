@@ -1,16 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { updateCart, removeFromCart } from "../../redux/actions";
 import { deleteBurger } from "../../redux/burgerSlice";
-import { burgers } from "../Menu/menu.contant";
 import "./Cart.css";
 
-// const burgers = [
-//   { title: "AA", ref: "aa", price: 100, qty: 5, total: 500 },
-//   { title: "BB", ref: "bb", price: 200, qty: 7, total: 700 },
-
-// ];
 
 const Row = ({ item }) => {
   const dispatch = useDispatch();

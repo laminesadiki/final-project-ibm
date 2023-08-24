@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Login(props) {
-  // const { handleClickRegister} = props
   return (
     <div className="d-flex justify-content-center">
       <div
