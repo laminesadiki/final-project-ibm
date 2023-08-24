@@ -49,7 +49,7 @@ function Login(props) {
           </div>
 
           <button type="submit" className="btn btn-primary btn-block mb-4">
-            Sign in
+            Se Connecter
           </button>
 
           <div className="text-center">

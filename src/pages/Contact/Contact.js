@@ -12,7 +12,7 @@ const Contact = () => {
         action="#!"
         style={{ width: "500px" }}
       >
-        <p className="h4 mb-4">Contact us</p>
+        <p className="h4 mb-4">Nous Contacter</p>
 
         <input
           type="text"

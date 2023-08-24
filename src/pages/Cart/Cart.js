@@ -72,11 +72,11 @@ const Table = (props) => {
   return (
     <table>
       <tr>
-        <th width="200">Title</th>
-        <th width="80">Reference</th>
-        <th width="150">Price</th>
-        <th width="150">Quantity</th>
-        <th width="200">Total</th>
+        <th width="200">Titre</th>
+        <th width="80">Reférence</th>
+        <th width="150">Prix</th>
+        <th width="150">Quantité</th>
+        <th width="200">Totale</th>
       </tr>
       {burgers.map((burger) => {
         return <Row item={burger} />;
@@ -92,14 +92,14 @@ export const CartPage = () => {
   const shipping = 10.0;
 
   useEffect(() => {
-    let totals = burgers?.map(item => {
-      return item?.qty * item?.price
-    })
-    setSubTotal(totals.reduce((item1, item2) => item1 + item2, 0))
-    setTotal(subTotal + shipping)
-    console.log(`Subtotal:  €${subTotal} `)
-    console.log(`You have ${burgers.length} in your cart`)
-  }, [burgers, subTotal, total])
+    let totals = burgers?.map((item) => {
+      return item?.qty * item?.price;
+    });
+    setSubTotal(totals.reduce((item1, item2) => item1 + item2, 0));
+    setTotal(subTotal + shipping);
+    console.log(`Subtotal:  €${subTotal} `);
+    console.log(`You have ${burgers.length} in your cart`);
+  }, [burgers, subTotal, total]);
   return (
     <Fragment>
       <div className="container">
@@ -110,23 +110,33 @@ export const CartPage = () => {
 
           <div className="col-sm-3 order-summary">
             <ul className="list-group">
-              <li className="list-group-item">Order Summary</li>
+              <li className="list-group-item">Récapitulatif de la commande</li>
 
               <li className="list-group-item">
                 <ul className="list-group d-flex">
-                  <li className="text-left">Subtotal</li>
+                  <li className="text-left">
+                    {" "}
+                    <strong>Sous Total</strong>
+                  </li>
                   <li className="text-right">€{subTotal.toFixed(2)}</li>
                 </ul>
                 <ul className="list-group d-flex">
-                  <li className="text-left">shipping</li>
+                  <li className="text-left">
+                    {" "}
+                    <strong>Livraison</strong>
+                  </li>
                   <li className="text-right">{shipping}</li>
                 </ul>
               </li>
 
               <li className="list-group-item ">
                 <ul className="list-group d-flex">
-                  <li className="text-left">Total</li>
-                  <li className="text-right">€{subTotal == 0.00 ? "0.00" : total.toFixed(2)}</li>
+                  <li className="text-left">
+                    <strong>Totale</strong>
+                  </li>
+                  <li className="text-right">
+                    €{subTotal == 0.0 ? "0.00" : total.toFixed(2)}
+                  </li>
                 </ul>
               </li>
             </ul>
