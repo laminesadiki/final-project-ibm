@@ -6,7 +6,7 @@ import { deleteBurger } from "../../redux/burgerSlice";
 import { burgers } from "../Menu/menu.contant";
 import "./Cart.css";
 
-// const items = [
+// const burgers = [
 //   { title: "AA", ref: "aa", price: 100, qty: 5, total: 500 },
 //   { title: "BB", ref: "bb", price: 200, qty: 7, total: 700 },
 
@@ -15,6 +15,7 @@ import "./Cart.css";
 const Row = ({ item }) => {
   const dispatch = useDispatch();
   const { ref, title, price, qty, img, id } = item;
+  const [quantity, setQuantity] = useState(qty);
   return (
     <tr>
       <td>
@@ -27,33 +28,33 @@ const Row = ({ item }) => {
           <button
             type="button"
             className="btn btn-secondary"
-            // onClick={() => {
-            //   if (qty > 1) {
-            //     update("decrement");
-            //   }
-            // }}
+            onClick={() => {
+              if (quantity > 1) {
+                setQuantity(quantity - 1);
+              }
+            }}
           >
             -
           </button>
-          <span className="btn btn-light">{qty}</span>
+          <span className="btn btn-light">{quantity}</span>
           <button
             type="button"
             className="btn btn-secondary"
-            // onClick={() => {
-            //   update("increment");
-            // }}
+            onClick={() => {
+              setQuantity(quantity + 1);
+            }}
           >
             +
           </button>
         </div>
       </td>
-      <td>€300</td>
+      <td>{price * quantity} €</td>
       <td>
         <button
           type="button"
           className="btn btn-danger remove"
           onClick={() => {
-            dispatch(deleteBurger({id}))
+            dispatch(deleteBurger({ id }));
           }}
         >
           X
@@ -85,6 +86,20 @@ const Table = (props) => {
 };
 
 export const CartPage = () => {
+  const burgers = useSelector((state) => state.burgerReducer.burgers);
+  const [subTotal, setSubTotal] = useState(0.0);
+  const [total, setTotal] = useState(0.0);
+  const shipping = 10.0;
+
+  useEffect(() => {
+    let totals = burgers?.map(item => {
+      return item?.qty * item?.price
+    })
+    setSubTotal(totals.reduce((item1, item2) => item1 + item2, 0))
+    setTotal(subTotal + shipping)
+    console.log(`Subtotal:  €${subTotal} `)
+    console.log(`You have ${burgers.length} in your cart`)
+  }, [burgers, subTotal, total])
   return (
     <Fragment>
       <div className="container">
@@ -100,23 +115,18 @@ export const CartPage = () => {
               <li className="list-group-item">
                 <ul className="list-group d-flex">
                   <li className="text-left">Subtotal</li>
-                  <li className="text-right">€100</li>
+                  <li className="text-right">€{subTotal.toFixed(2)}</li>
                 </ul>
                 <ul className="list-group d-flex">
                   <li className="text-left">shipping</li>
-                  <li className="text-right">€100</li>
-                </ul>
-                <ul className="list-group d-flex">
-                  <li className="coupon crimson">
-                    <small> Add Coupon Code</small>
-                  </li>
+                  <li className="text-right">{shipping}</li>
                 </ul>
               </li>
 
               <li className="list-group-item ">
                 <ul className="list-group d-flex">
                   <li className="text-left">Total</li>
-                  <li className="text-right">€100</li>
+                  <li className="text-right">€{subTotal == 0.00 ? "0.00" : total.toFixed(2)}</li>
                 </ul>
               </li>
             </ul>

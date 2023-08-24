@@ -1,5 +1,7 @@
 footer {
     margin-top: auto;
-    /* bottom: 0;
-    position: absolute; */
+    background-color: black;
+    color: white;
+    bottom: 0;
+    position: absolute;
 }

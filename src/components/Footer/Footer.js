@@ -4,7 +4,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "black", color: "white" }}>
+    <footer >
       <div className="row m-3">
         <div className="col-md-8" style={{textAlign: "left"}}>
           <div className="row">

@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4} from "uuid";
 
 const initialState = {
-    burgers: []
+    burgers: [],
+    cartCount: 0,
 };
 
 const burgerSlice = createSlice({
@@ -17,6 +18,9 @@ const burgerSlice = createSlice({
         },
         updateBurger(state, action){
             state.burgers = state.burgers.map((burger) => burger.id === action.payload.id ? action.payload : burger);
+        },
+        addToCart(state, action) {
+            state.cartCount++;
         }
     }
 });

@@ -68,12 +68,6 @@ export const burgers = [
     img: "assets/burger3.png",
   },
   {
-    ref: "burger_4",
-    title: "OIP",
-    price: 400,
-    img: "assets/OIP.jpg",
-  },
-  {
     ref: "burger_5",
     title: "burger 1",
     price: 100,
@@ -87,18 +81,6 @@ export const burgers = [
   },
   {
     ref: "burger_7",
-    title: "burger 3",
-    price: 300,
-    img: "assets/burger3.png",
-  },
-  {
-    ref: "burger_8",
-    title: "OIP",
-    price: 400,
-    img: "assets/OIP.jpg",
-  },
-  {
-    ref: "burger_9",
     title: "burger 3",
     price: 300,
     img: "assets/burger3.png",

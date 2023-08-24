@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { addtoCart } from "../../redux/actions";
 import { addBurger } from "../../redux/burgerSlice";
 
 const Modal = ({item}) => {
@@ -75,7 +76,7 @@ const Modal = ({item}) => {
             </button>
             <button type="button" class="btn btn-success" data-bs-dismiss="modal" onClick={
                 () => {
-                  dispatch(addBurger({...item, qty}))
+                  dispatch(addBurger({...item, qty}));
                 }
               }>
               Ajouter au panier

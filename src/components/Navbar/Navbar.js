@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { IoFastFoodOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 const NavItem = (props) => {
   const { name, path } = props;
@@ -40,6 +41,10 @@ function Navbar() {
     { name: "Mes Commandes", path: "/myOrders" },
     { name: "Détails de la Commande", path: "/orderDetails" },
   ];
+
+  const bugers = useSelector(state => state.burgerReducer.burgers);
+
+  const cartCount = bugers.length;
 
   return (
     <nav
@@ -81,7 +86,9 @@ function Navbar() {
               <div className="menu-right col-md-6">
                 <Link to="/cart">
                   <i class="fas fa-shopping-bag fa-2x grey"></i>
-                  <span class="badge badge-pill badge-success">1</span>
+                  <span class="badge badge-pill badge-success">
+                    {cartCount}
+                  </span>
                 </Link>
               </div>
             </div>
