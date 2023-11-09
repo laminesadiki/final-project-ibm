@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+  db:
+    image: "mysql:8.0.20"
+    container_name: "mysql"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mydb
+    ports:
+      - "3306:3306"
+    volumes:
+      - "mysqlconf:/etc/mysql/conf.d"
+      - "mysqldblogs:/var/log"
+      - "mysqllib:/var/lib/mysql"
+      - "./data:/opt/dump"
+    networks:
+      - mysql-network
+  
+  adminer:
+    image: adminer:latest
+    container_name: adminer
+    restart: always
+    ports:
+      - "4407:4407"
+    command:
+      - 'php'
+      - '-S'
+      - '[::]:4407'
+      - '-t'
+      - '/var/www/html'
+    depends_on:
+      - db
+    networks:
+      - mysql-network
+
+volumes:
+  mysqlconf:
+  mysqldblogs:
+  mysqllib:
+
+networks:
+  mysql-network:
+    driver: bridge
